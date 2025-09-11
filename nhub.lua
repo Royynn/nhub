@@ -3,24 +3,9 @@ local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 PlaceId, JobId = game.PlaceId, game.JobId
 
-local autospinning = false
-
-task.spawn(function()
-    while task.wait(0.01) do
-        if autospinning then
-            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
-            task.wait(10)
-        end
-    end
-end)
-
-cc = Players.LocalPlayer.OnTeleport:Connect(function(State)
-    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/nhub.lua"))()')
-end)
-
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub 1.0"
+	Name = "nigger hub 1.337"
 })
 -- main
 local MainTab = Window:CreateTab({
@@ -69,8 +54,6 @@ local m3 = MainTab:CreateButton({
 	Name = "destroy gui",
 	Description = nil,
     	Callback = function()
-    	    cc:Disconnect()
-    	    cc = nil
             Luna:Destroy()
             script:Destroy()
     	end
@@ -238,6 +221,15 @@ if game.PlaceId == 13822889 then
     })
 end
 -- steal a brainrot
+local autospinning = false
+task.spawn(function()
+    while task.wait(0.01) do
+        if autospinning then
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
+            task.wait(10)
+        end
+    end
+end)
 local sabid = {
     [109983668079237] = true,
     [128762245270197] = true,
