@@ -3,6 +3,17 @@ local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 PlaceId, JobId = game.PlaceId, game.JobId
 
+local autospinning = false
+
+task.spawn(function()
+    while task.wait(0.01) do
+        if autospinning then
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
+            task.wait(10)
+        end
+    end
+end)
+
 cc = game.Players.LocalPlayer.OnTeleport:Connect(function(State)
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/nhub.lua"))()')
 end)
@@ -244,25 +255,25 @@ if sabid[game.PlaceId] then
 	Description = nil,
 	CurrentValue = false,
     	Callback = function(Value)
-            while Value do
-                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
-                task.wait(10)
-                if not Value then break end
-            end
+            autospinning = Value
         end
     }, "Toggle")
     local b2 = GameTab:CreateButton({
 	Name = "Chilli",
 	Description = nil,
     	Callback = function()
+            Luna:Destroy()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
+            script:Destroy()
     	end
     })
     local b3 = GameTab:CreateButton({
 	Name = "PulsarX (key system)",
 	Description = nil,
     	Callback = function()
+            Luna:Destroy()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Estevansit0/KJJK/refs/heads/main/PusarX-loader.lua"))()
+            script:Destroy()
     	end
     })
 end
