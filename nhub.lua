@@ -149,25 +149,25 @@ local c2 = ChatTab:CreateButton({
     	Callback = function()
     	    for _ = 1, 4 do
                 task.wait(0.1)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("　", 66))
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("￣ﾀﾀ", 66))
             end
     	end
 })
-ChatTab:CreateSection('-- set language to "Қазақ тілі" for this to work')
+ChatTab:CreateSection('-- set language to "Ka3ak Tili" for this to work')
 local c3 = ChatTab:CreateButton({
 	Name = "nigger spam",
 	Description = nil,
     	Callback = function()
     	    task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("　", 66))
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("￣ﾀﾀ", 66))
             task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "fมϲҟถเ่ʛʛeꞅธ")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "f￠ﾸﾡￏﾲￒﾟ￠ﾸﾖ￠ﾹﾀ￠ﾹﾈￊﾛￊﾛe￪ﾞﾅ￠ﾸﾘ")
             task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "เ่ꜧสteถเ่ʛʛeꞅธ")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "￠ﾹﾀ￠ﾹﾈ￪ﾜﾧ￠ﾸﾪte￠ﾸﾖ￠ﾹﾀ￠ﾹﾈￊﾛￊﾛe￪ﾞﾅ￠ﾸﾘ")
             task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "kῘllสllⴖῘʛʛeꞅṡַ")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "k￡﾿ﾘll￠ﾸﾪll￢ﾴﾖ￡﾿ﾘￊﾛￊﾛe￪ﾞﾅ￡ﾹﾡￖﾷ")
             task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "cมtสถiggสรხꞅสiถiถһสꙆf")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "c￠ﾸﾡt￠ﾸﾪ￠ﾸﾖigg￠ﾸﾪ￠ﾸﾣ￡ﾃﾮ￪ﾞﾅ￠ﾸﾪi￠ﾸﾖi￠ﾸﾖￒﾻ￠ﾸﾪ￪ﾙﾆf")
     	end
 })
 local c4 = ChatTab:CreateButton({
@@ -175,9 +175,9 @@ local c4 = ChatTab:CreateButton({
 	Description = nil,
     	Callback = function()
     	    task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("һสveถ'tมรedtһewჿꞅd'ꞅสpe'iถสwһiꙆe...")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ￒﾻ￠ﾸﾪve￠ﾸﾖ't￠ﾸﾡ￠ﾸﾣedtￒﾻew￡ﾃ﾿￪ﾞﾅd'￪ﾞﾅ￠ﾸﾪpe'i￠ﾸﾖ￠ﾸﾪwￒﾻi￪ﾙﾆe...")
             task.wait(1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("iꞅสpedꙆiꝁe6ჿꞅ7ถiggeꞅรtჿdสy")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("i￪ﾞﾅ￠ﾸﾪped￪ﾙﾆi￪ﾝﾁe6￡ﾃ﾿￪ﾞﾅ7￠ﾸﾖigge￪ﾞﾅ￠ﾸﾣt￡ﾃ﾿d￠ﾸﾪy")
     	end
 })
 local c5 = ChatTab:CreateButton({
@@ -185,7 +185,7 @@ local c5 = ChatTab:CreateButton({
 	Description = nil,
     	Callback = function()
     	    task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ṡַḥַụַṭַụṗַⴖῘʛʛeꞅ")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("￡ﾹﾡￖﾷ￡ﾸﾥￖﾷ￡ﾻﾥￖﾷ￡ﾹﾭￖﾷ￡ﾻﾥ￡ﾹﾗￖﾷ￢ﾴﾖ￡﾿ﾘￊﾛￊﾛe￪ﾞﾅ")
     	end
 })
 local c6 = ChatTab:CreateButton({
@@ -193,7 +193,7 @@ local c6 = ChatTab:CreateButton({
 	Description = nil,
     	Callback = function()
     	    task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ezⴖเ่ʛʛส")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ez￢ﾴﾖ￠ﾹﾀ￠ﾹﾈￊﾛￊﾛ￠ﾸﾪ")
     	end
 })
 local c7 = ChatTab:CreateButton({
@@ -201,7 +201,7 @@ local c7 = ChatTab:CreateButton({
 	Description = nil,
     	Callback = function()
     	    task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("іṁjәַꞅꝁịַṅַg")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("￑ﾖ￡ﾹﾁjￓﾙￖﾷ￪ﾞﾅ￪ﾝﾁ￡ﾻﾋￖﾷ￡ﾹﾅￖﾷg")
     	end
 })
 -- lumber tycoon 2
