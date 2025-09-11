@@ -14,7 +14,7 @@ task.spawn(function()
     end
 end)
 
-cc = game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+cc = Players.LocalPlayer.OnTeleport:Connect(function(State)
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/nhub.lua"))()')
 end)
 
