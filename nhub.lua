@@ -206,7 +206,19 @@ local c7 = ChatTab:CreateButton({
 })
 -- lumber tycoon 2
 if game.PlaceId == 13822889 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+    local GameTab = Window:CreateTab({
+	Name = "Lumber Tycoon 2",
+	Icon = "park",
+	ImageSource = "Material",
+	ShowTitle = true
+    })
+    local b1 = GameTab:CreateButton({
+	Name = "script",
+	Description = nil,
+    	Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+    	end
+    })
 end
 -- steal a brainrot
 local autospinning = false
