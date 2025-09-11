@@ -80,7 +80,7 @@ local u2 = UTab:CreateButton({
     	end
 })
 local u3 = UTab:CreateButton({
-	Name = "friend 3sp",
+	Name = "faggot esp",
 	Description = nil,
     	Callback = function()
     	    loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/friend3sp.lua"))()
@@ -321,7 +321,7 @@ if inkgameid[game.PlaceId] then
     	end
     })
     local b5 = GameTab:CreateButton({
-	Name = "guard 3sp",
+	Name = "guard esp",
 	Description = nil,
     	Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/guard3sp.lua"))()
