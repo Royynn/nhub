@@ -5,7 +5,7 @@ PlaceId, JobId = game.PlaceId, game.JobId
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub v1.338"
+	Name = "nigger hub v1.339"
 })
 -- main
 local MainTab = Window:CreateTab({
@@ -134,7 +134,7 @@ local ChatTab = Window:CreateTab({
 	Name = "edate chat with niggers",
 	Icon = "chat",
 	ImageSource = "Material",
-	ShowTitle = true
+	ShowTitle = false
 })
 local c1 = ChatTab:CreateButton({
 	Name = "cat bypasser",
@@ -144,22 +144,29 @@ local c1 = ChatTab:CreateButton({
     	end
 })
 local c2 = ChatTab:CreateButton({
+	Name = "auto report",
+	Description = nil,
+    	Callback = function()
+    	    loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/autoreport.lua"))()
+    	end
+})
+local c3 = ChatTab:CreateButton({
 	Name = "clear chat",
 	Description = nil,
     	Callback = function()
     	    for _ = 1, 4 do
                 task.wait(0.1)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("　", 66))
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("", 200))
             end
     	end
 })
-ChatTab:CreateSection('-- set language to "Қазақ тілі" for this to work')
-local c3 = ChatTab:CreateButton({
+ChatTab:CreateSection('')
+local c4 = ChatTab:CreateButton({
 	Name = "nigger spam",
 	Description = nil,
     	Callback = function()
     	    task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("　", 66))
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("", 200))
             task.wait(0.1)
             game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "fมϲҟถเ่ʛʛeꞅธ")
             task.wait(0.1)
@@ -170,7 +177,7 @@ local c3 = ChatTab:CreateButton({
             game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "cมtสถiggสรხꞅสiถiถһสꙆf")
     	end
 })
-local c4 = ChatTab:CreateButton({
+local c5 = ChatTab:CreateButton({
 	Name = "rape niggas",
 	Description = nil,
     	Callback = function()
@@ -180,7 +187,7 @@ local c4 = ChatTab:CreateButton({
             game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("iꞅสpedꙆiꝁe6ჿꞅ7ถiggeꞅรtჿdสy")
     	end
 })
-local c5 = ChatTab:CreateButton({
+local c6 = ChatTab:CreateButton({
 	Name = "shut up nigger",
 	Description = nil,
     	Callback = function()
@@ -188,7 +195,7 @@ local c5 = ChatTab:CreateButton({
             game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ṡַḥַụַṭַụṗַⴖῘʛʛeꞅ")
     	end
 })
-local c6 = ChatTab:CreateButton({
+local c7 = ChatTab:CreateButton({
 	Name = "ez nigga",
 	Description = nil,
     	Callback = function()
@@ -196,7 +203,7 @@ local c6 = ChatTab:CreateButton({
             game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ezⴖเ่ʛʛส")
     	end
 })
-local c7 = ChatTab:CreateButton({
+local c8 = ChatTab:CreateButton({
 	Name = "im jerking",
 	Description = nil,
     	Callback = function()
