@@ -9,9 +9,7 @@ end)
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub",
-	LogoID = "82795327169782",
-	LoadingEnabled = false
+	Name = "nigger hub"
 })
 -- main
 local MainTab = Window:CreateTab({
@@ -130,6 +128,13 @@ local u4 = UTab:CreateToggle({
             end
     	end
 }, "Toggle")
+local u5 = UTab:CreateButton({
+	Name = "xvc hub",
+	Description = nil,
+    	Callback = function()
+    	    loadstring(game:HttpGet("https://pastebin.com/raw/Piw5bqGq"))()
+    	end
+})
 -- chat
 local ChatTab = Window:CreateTab({
 	Name = "edate chat with niggers",
@@ -205,6 +210,62 @@ local c7 = ChatTab:CreateButton({
             game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("іṁjәַꞅꝁịַṅַg")
     	end
 })
+-- lumber tycoon 2
+if game.PlaceId == 13822889 then
+    local GameTab = Window:CreateTab({
+	Name = "Lumber Tycoon 2",
+	Icon = "park",
+	ImageSource = "Material",
+	ShowTitle = true
+    })
+    local b1 = GameTab:CreateButton({
+	Name = "script",
+	Description = nil,
+    	Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+    	end
+    })
+end
+-- steal a brainrot
+local sabid = {
+    [109983668079237] = true,
+    [128762245270197] = true,
+    [96342491571673] = true
+}
+if sabid[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+	Name = "Steal A Brainrot",
+	Icon = "do_not_touch",
+	ImageSource = "Material",
+	ShowTitle = true
+    })
+    local b1 = GameTab:CreateToggle({
+	Name = "Auto Spin",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+            while Value do
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
+                task.wait(10)
+                if not Value then break end
+            end
+        end
+    }, "Toggle")
+    local b2 = GameTab:CreateButton({
+	Name = "Chilli",
+	Description = nil,
+    	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
+    	end
+    })
+    local b3 = GameTab:CreateButton({
+	Name = "PulsarX (key system)",
+	Description = nil,
+    	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Estevansit0/KJJK/refs/heads/main/PusarX-loader.lua"))()
+    	end
+    })
+end
 -- ink game
 local inkgameid = {
     [99567941238278] = true,
