@@ -114,5 +114,5 @@ if inkgameid[game.PlaceId] then
     })
 end
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
-    
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/nhub.lua"))()')
 end)
