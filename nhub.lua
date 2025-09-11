@@ -5,7 +5,7 @@ PlaceId, JobId = game.PlaceId, game.JobId
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub v1.337"
+	Name = "nigger hub v1.338"
 })
 -- main
 local MainTab = Window:CreateTab({
@@ -285,28 +285,35 @@ if inkgameid[game.PlaceId] then
 	ImageSource = "Material",
 	ShowTitle = true
     })
-    local b1 = GameTab:CreateButton({
+	local b1 = GameTab:CreateButton({
+	Name = "teleport to jerking position",
+	Description = nil,
+    	Callback = function()
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(Vector3.new(197.5, 55, 25)))
+    	end
+    })
+    local b2 = GameTab:CreateButton({
 	Name = "join pro server",
 	Description = nil,
     	Callback = function()
             game:GetService("TeleportService"):Teleport(76172769094087, game:GetService("Players").LocalPlayer)
     	end
     })
-    local b2 = GameTab:CreateButton({
+    local b3 = GameTab:CreateButton({
 	Name = "voidware (ac bypass)",
 	Description = nil,
     	Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()
     	end
     })
-    local b3 = GameTab:CreateButton({
+    local b4 = GameTab:CreateButton({
 	Name = "owlhook",
 	Description = nil,
     	Callback = function()
             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0785b4b8f41683be513badd57f6a71c0.lua"))()
     	end
     })
-    local b4 = GameTab:CreateButton({
+    local b5 = GameTab:CreateButton({
 	Name = "guard 3sp",
 	Description = nil,
     	Callback = function()
