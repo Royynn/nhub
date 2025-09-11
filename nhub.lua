@@ -20,7 +20,7 @@ end)
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub"
+	Name = "nigger hub 1.0"
 })
 -- main
 local MainTab = Window:CreateTab({
