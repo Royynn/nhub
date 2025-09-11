@@ -5,7 +5,7 @@ PlaceId, JobId = game.PlaceId, game.JobId
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub v1.339"
+	Name = "nigger hub v1.3399"
 })
 -- main
 local MainTab = Window:CreateTab({
