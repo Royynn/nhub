@@ -5,7 +5,7 @@ PlaceId, JobId = game.PlaceId, game.JobId
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 local Window = Luna:CreateWindow({
-	Name = "nigger hub v1.3399"
+	Name = "nigger hub v1.34"
 })
 -- main
 local MainTab = Window:CreateTab({
@@ -15,6 +15,33 @@ local MainTab = Window:CreateTab({
 	ShowTitle = true
 })
 local m1 = MainTab:CreateButton({
+	Name = "copy jobid",
+	Description = nil,
+    	Callback = function()
+            setclipboard(JobId)
+    	end
+})
+local JoinJobId
+local m2 = MainTab:CreateInput({
+	Name = "jobid",
+	Description = nil,
+	PlaceholderText = JobId,
+	CurrentValue = "",
+	Numeric = false,
+	MaxCharacters = nil,
+	Enter = false,
+    	Callback = function(Text)
+			JoinJobId = Text
+    	end
+}, "Input")
+local m3 = MainTab:CreateButton({
+	Name = "join jobid",
+	Description = nil,
+    	Callback = function()
+            TeleportService:TeleportToPlaceInstance(PlaceId, JoinJobId, Players.LocalPlayer)
+    	end
+})
+local m4 = MainTab:CreateButton({
 	Name = "rejoin",
 	Description = nil,
     	Callback = function()
@@ -27,7 +54,7 @@ local m1 = MainTab:CreateButton({
             end
     	end
 })
-local m2 = MainTab:CreateButton({
+local m5 = MainTab:CreateButton({
 	Name = "serverhop",
 	Description = nil,
     	Callback = function()
@@ -50,7 +77,7 @@ local m2 = MainTab:CreateButton({
             end
     	end
 })
-local m3 = MainTab:CreateButton({
+local m6 = MainTab:CreateButton({
 	Name = "destroy gui",
 	Description = nil,
     	Callback = function()
