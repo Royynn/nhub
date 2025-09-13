@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.0.6"
+scriptname = "nigger hub v2.0.7"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -484,7 +484,7 @@ elseif nigga_id[game.PlaceId] then
         Name = "spam",
         Description = nil,
         Callback = function()
-            for _ = 1, 4 do
+            for _ = 1, 3 do
                 task.wait(0.1)
                 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "Ꙇeสvefꞅჿmyჿมꞅfมcꝁiถgรңịַttỵַcꞅewⴖჿw!")
                 task.wait(0.1)
