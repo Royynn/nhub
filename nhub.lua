@@ -1,4 +1,5 @@
--- 2.0.2
+scriptname = "nigger hub v2.0.5"
+
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
 
@@ -51,22 +52,21 @@ Players.LocalPlayer.OnTeleport:Connect(function(State)
 end)
 
 task.spawn(function()
-    while task.wait(0.01) do
+    while task.wait(10) do
         if autospinning then
             game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
-            task.wait(10)
         end
     end
 end)
 
 task.spawn(function()
-    while task.wait(0.01) do
+    while task.wait(1) do
         if autoinvite then
             for _, v in pairs(Players:GetPlayers()) do
                 local attr = v:GetAttribute("guildId")
                 if attr == 0 then
                     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RequestRecruit"):FireServer(v)
-                    task.wait(0.5)
+                    task.wait(1)
                 end
             end
         end
@@ -74,7 +74,7 @@ task.spawn(function()
 end)
 
 local Luna = loadstring(game:HttpGet("https://raw.nebulasoftworks.xyz/luna", true))()
-local Window = Luna:CreateWindow({Name = "nigger hub v2.0.2", LoadingEnabled = false})
+local Window = Luna:CreateWindow({Name = scriptname, LoadingEnabled = false})
 
 -- MainTab
 local MainTab = Window:CreateTab({
@@ -173,25 +173,43 @@ local UniversalTab = Window:CreateTab({
     ImageSource = "Material",
     ShowTitle = true
 })
-local UniversalButton1 = UniversalTab:CreateButton({
+local UniversalButton1 = UniversalTab:CreateSlider({
+    Name = "walkspeed",
+    Range = {16, 100},
+    Increment = 1,
+    CurrentValue = LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed,
+    Callback = function(Value)
+        LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed = Value
+    end
+}, "Slider")
+UniversalTab:CreateDivider()
+local UniversalButton2 = UniversalTab:CreateButton({
     Name = "infinite yield",
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
     end
 })
-local UniversalButton2 = UniversalTab:CreateButton({
+local UniversalButton3 = UniversalTab:CreateButton({
     Name = "faggot esp",
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/friend3sp.lua"))()
     end
 })
-local UniversalButton3 = UniversalTab:CreateButton({
+local UniversalButton4 = UniversalTab:CreateButton({
     Name = "show server pos",
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/desync.lua"))()
+    end
+})
+UniversalTab:CreateDivider()
+local UniversalButton5 = UniversalTab:CreateButton({
+    Name = "xvc hub",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Piw5bqGq"))()
     end
 })
 --
@@ -262,6 +280,14 @@ local ChatButton6 = ChatTab:CreateButton({
     Callback = function()
         task.wait(0.1)
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("іṁjәַꞅꝁịַṅַg")
+    end
+})
+ChatTab:CreateDivider()
+local ChatButton7 = ChatTab:CreateButton({
+    Name = "cat bypasser",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shadow62x/catbypass/main/upfix"))()
     end
 })
 --
@@ -349,7 +375,13 @@ local lt2_id = {
     [13822889] = true
 }
 local nigga_id = {
-    [78880563336454] = true
+    [78880563336454] = true,
+    [78611602637625] = true,
+    [110937580440810] = true,
+    [116605021848414] = true,
+    [124805644313664] = true,
+    [127626589430786] = true,
+    [132493759931413] = true
 }
 if ink_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
@@ -452,9 +484,11 @@ elseif nigga_id[game.PlaceId] then
         Name = "spam",
         Description = nil,
         Callback = function()
-            for _ = 1, 8 do
-                task.wait(0.1)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("jჿintһeⴖῘggสธeӽcꞅewถเ่ʛʛeꞅธ!")
+            for _ = 1, 4 do
+                task.wait(0.5)
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Ꙇeสvefꞅჿmyჿมꞅรңịַttỵַfมcꝁiถgcꞅewⴖჿw!")
+                task.wait(0.5)
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("jჿintһeⴖῘggสธeӽcꞅewyჿมรtมpidถเ่ʛʛeꞅธ!")
             end
         end
     })
