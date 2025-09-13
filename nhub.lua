@@ -1,3 +1,4 @@
+-- 2.0.1
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
 
@@ -58,7 +59,7 @@ task.spawn(function()
 end)
 
 local Luna = loadstring(game:HttpGet("https://raw.nebulasoftworks.xyz/luna", true))()
-local Window = Luna:CreateWindow({Name = "nigger hub v2", LoadingEnabled = false})
+local Window = Luna:CreateWindow({Name = "nigger hub v2.0.1", LoadingEnabled = false})
 
 -- MainTab
 local MainTab = Window:CreateTab({
@@ -332,6 +333,9 @@ local sab_id = {
 local lt2_id = {
     [13822889] = true
 }
+local nigga_id = {
+    [78880563336454] = true
+}
 if ink_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "ink gay",
@@ -414,5 +418,43 @@ elseif lt2_id[game.PlaceId] then
             loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
         end
     })
+elseif nigga_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "nigga cult",
+        Icon = "favorite",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton = GameTab:CreateButton({
+        Name = "invite all",
+        Description = nil,
+        Callback = function()
+            for _ = 1, 8 do
+                task.wait(0.1)
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("jჿintһeⴖῘggสธeӽcꞅewถเ่ʛʛeꞅธ!")
+            end
+            local plrs = game:GetService("Players")
+            local sentto = 0
+            for _, v in pairs(plrs:GetPlayers()) do
+                local attr = v:GetAttribute("guildId")
+                if attr == 0 then
+                    print("Sent to "..v.Name)
+                    sentto = sentto + 1
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RequestRecruit"):FireServer(v)
+                    task.wait(0.5)
+                end
+            end
+            print("Sent to "..sentto.." Players")
+        end
+    })
 end
 --
+--[[
+local Button = Tab:CreateButton({
+    Name = "Button",
+    Description = nil,
+    Callback = function()
+        return
+    end
+})
+--]]
