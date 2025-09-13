@@ -1,4 +1,4 @@
--- 2.0.1
+-- 2.0.2
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
 
@@ -38,10 +38,11 @@ local track = nil
 local jtask = nil
 local CURRENTTRACK
 local autospinning = false
---
-
+local autoinvite = false
 local Keep = true
 local TeleportCheck = false
+--
+
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if Keep and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
@@ -58,8 +59,22 @@ task.spawn(function()
     end
 end)
 
+task.spawn(function()
+    while task.wait(0.01) do
+        if autoinvite then
+            for _, v in pairs(Players:GetPlayers()) do
+                local attr = v:GetAttribute("guildId")
+                if attr == 0 then
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RequestRecruit"):FireServer(v)
+                    task.wait(0.5)
+                end
+            end
+        end
+    end
+end)
+
 local Luna = loadstring(game:HttpGet("https://raw.nebulasoftworks.xyz/luna", true))()
-local Window = Luna:CreateWindow({Name = "nigger hub v2.0.1", LoadingEnabled = false})
+local Window = Luna:CreateWindow({Name = "nigger hub v2.0.2", LoadingEnabled = false})
 
 -- MainTab
 local MainTab = Window:CreateTab({
@@ -411,7 +426,7 @@ elseif lt2_id[game.PlaceId] then
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton = GameTab:CreateButton({
+    local GameButton1 = GameTab:CreateButton({
         Name = "shit hub",
         Description = nil,
         Callback = function()
@@ -425,26 +440,48 @@ elseif nigga_id[game.PlaceId] then
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton = GameTab:CreateButton({
-        Name = "invite all",
+    local GameButton1 = GameTab:CreateToggle({
+        Name = "auto invite",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            autoinvite = Value
+        end
+    }, "Toggle")
+    local GameButton2 = GameTab:CreateButton({
+        Name = "spam",
         Description = nil,
         Callback = function()
             for _ = 1, 8 do
                 task.wait(0.1)
                 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("jჿintһeⴖῘggสธeӽcꞅewถเ่ʛʛeꞅธ!")
             end
-            local plrs = game:GetService("Players")
-            local sentto = 0
-            for _, v in pairs(plrs:GetPlayers()) do
-                local attr = v:GetAttribute("guildId")
-                if attr == 0 then
-                    print("Sent to "..v.Name)
-                    sentto = sentto + 1
-                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RequestRecruit"):FireServer(v)
-                    task.wait(0.5)
+        end
+    })
+    local GameButton3 = GameTab:CreateButton({
+        Name = "serverhop",
+        Description = nil,
+        Callback = function()
+            local servers = {}
+            local req = game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true")
+            local body = HttpService:JSONDecode(req)
+            if body and body.data then
+                for i, v in next, body.data do
+                    if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                        table.insert(servers, 1, v.id)
+                    end
                 end
             end
-            print("Sent to "..sentto.." Players")
+            if #servers > 0 then
+                TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], Players.LocalPlayer)
+            else
+                Luna:Notification({ 
+                    Title = "Serverhop",
+                    Icon = "search",
+                    ImageSource = "Material",
+                    Content = "Couldn't find a server."
+                })
+            end
         end
     })
 end
