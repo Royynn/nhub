@@ -481,13 +481,6 @@ elseif nigga_id[game.PlaceId] then
         end
     }, "Toggle")
     local GameButton2 = GameTab:CreateButton({
-        Name = "copy nigga sex",
-        Description = nil,
-        Callback = function()
-            setclipboard("ⴖῘggสธeӽ")
-        end
-    })
-    local GameButton3 = GameTab:CreateButton({
         Name = "spam",
         Description = nil,
         Callback = function()
@@ -499,7 +492,7 @@ elseif nigga_id[game.PlaceId] then
             end
         end
     })
-    local GameButton4 = GameTab:CreateButton({
+    local GameButton3 = GameTab:CreateButton({
         Name = "serverhop",
         Description = nil,
         Callback = function()
