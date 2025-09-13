@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.0.5"
+scriptname = "nigger hub v2.0.6"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -481,18 +481,25 @@ elseif nigga_id[game.PlaceId] then
         end
     }, "Toggle")
     local GameButton2 = GameTab:CreateButton({
+        Name = "copy nigga sex",
+        Description = nil,
+        Callback = function()
+            setclipboard("ⴖῘggสธeӽ")
+        end
+    })
+    local GameButton3 = GameTab:CreateButton({
         Name = "spam",
         Description = nil,
         Callback = function()
             for _ = 1, 4 do
-                task.wait(0.5)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Ꙇeสvefꞅჿmyჿมꞅรңịַttỵַfมcꝁiถgcꞅewⴖჿw!")
-                task.wait(0.5)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("jჿintһeⴖῘggสธeӽcꞅewyჿมรtมpidถเ่ʛʛeꞅธ!")
+                task.wait(0.1)
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "Ꙇeสvefꞅჿmyჿมꞅfมcꝁiถgรңịַttỵַcꞅewⴖჿw!")
+                task.wait(0.1)
+                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "jჿintһeⴖῘggสธeӽcꞅewyჿมรtมpidถเ่ʛʛeꞅธ!")
             end
         end
     })
-    local GameButton3 = GameTab:CreateButton({
+    local GameButton4 = GameTab:CreateButton({
         Name = "serverhop",
         Description = nil,
         Callback = function()
