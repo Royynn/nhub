@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.2"
+scriptname = "nigger hub v2.1.3"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -191,17 +191,17 @@ local UniversalButton2 = UniversalTab:CreateButton({
     end
 })
 local UniversalButton3 = UniversalTab:CreateButton({
-    Name = "faggot esp",
-    Description = nil,
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/friend3sp.lua"))()
-    end
-})
-local UniversalButton4 = UniversalTab:CreateButton({
     Name = "show server pos",
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/desync.lua"))()
+    end
+})
+local UniversalButton4 = UniversalTab:CreateButton({
+    Name = "faggot esp",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/friend3sp.lua"))()
     end
 })
 UniversalTab:CreateDivider()
