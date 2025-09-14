@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.0"
+scriptname = "nigger hub v2.1.1"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -177,9 +177,9 @@ local UniversalButton1 = UniversalTab:CreateSlider({
     Name = "walkspeed",
     Range = {16, 100},
     Increment = 1,
-    CurrentValue = LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed,
+    CurrentValue = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed or 16,
     Callback = function(Value)
-        LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed = Value
+        if LocalPlayer.Character then LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed = Value end
     end
 }, "Slider")
 UniversalTab:CreateDivider()
@@ -381,6 +381,9 @@ local sab_id = {
 local lt2_id = {
     [13822889] = true
 }
+local arsenal_id = {
+    [286090429] = true
+}
 local nigga_id = {
     [78880563336454] = true,
     [78611602637625] = true,
@@ -461,6 +464,20 @@ elseif lt2_id[game.PlaceId] then
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+        end
+    })
+elseif arsenal_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "Anal",
+        Icon = "shield",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "shit hub",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))()
         end
     })
 elseif nigga_id[game.PlaceId] then
