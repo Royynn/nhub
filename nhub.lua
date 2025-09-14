@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.0.7"
+scriptname = "nigger hub v2.0.8"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -356,6 +356,13 @@ local EmotesButton2 = EmotesTab:CreateToggle({
         end
     end
 }, "Toggle")
+local EmotesButton3 = EmotesTab:CreateButton({
+    Name = "ugc emote player",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XVCHub/scripts/main/ugc-emote-player"))()
+    end
+})
 --
 -- GameTab
 local ink_id = {
@@ -437,18 +444,9 @@ elseif sab_id[game.PlaceId] then
         Name = "Chilli",
         Description = nil,
         Callback = function()
-            Luna:Destroy()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/Anti-Logger/main/Easy-Mode"))()
+            task.wait(1)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
-            script:Destroy()
-        end
-    })
-    local GameButton3 = GameTab:CreateButton({
-        Name = "PulsarX (key system)",
-        Description = nil,
-        Callback = function()
-            Luna:Destroy()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
-            script:Destroy()
         end
     })
 elseif lt2_id[game.PlaceId] then
