@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.1"
+scriptname = "nigger hub v2.1.2"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -259,6 +259,14 @@ local ChatButton3 = ChatTab:CreateButton({
     end
 })
 local ChatButton4 = ChatTab:CreateButton({
+    Name = "hello niggers",
+    Description = nil,
+    Callback = function()
+        task.wait(0.1)
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("helloⴖῘʛʛeꞅṡַ")
+    end
+})
+local ChatButton5 = ChatTab:CreateButton({
     Name = "ez nigga",
     Description = nil,
     Callback = function()
@@ -266,7 +274,7 @@ local ChatButton4 = ChatTab:CreateButton({
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ezⴖเ่ʛʛส")
     end
 })
-local ChatButton5 = ChatTab:CreateButton({
+local ChatButton6 = ChatTab:CreateButton({
     Name = "shut up nigger",
     Description = nil,
     Callback = function()
@@ -274,20 +282,12 @@ local ChatButton5 = ChatTab:CreateButton({
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ṡַḥַụַṭַụṗַⴖῘʛʛeꞅ")
     end
 })
-local ChatButton6 = ChatTab:CreateButton({
+local ChatButton7 = ChatTab:CreateButton({
     Name = "im jerking",
     Description = nil,
     Callback = function()
         task.wait(0.1)
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("іṁjәַꞅꝁịַṅַg")
-    end
-})
-ChatTab:CreateDivider()
-local ChatButton7 = ChatTab:CreateButton({
-    Name = "cat bypasser",
-    Description = nil,
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shadow62x/catbypass/main/upfix"))()
     end
 })
 --
