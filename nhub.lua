@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.3"
+scriptname = "nigger hub v2.1.4"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -395,7 +395,7 @@ local nigga_id = {
 }
 if ink_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
-        Name = "ink gay",
+        Name = "ink GAY",
         Icon = "accessible_forward",
         ImageSource = "Material",
         ShowTitle = true
@@ -452,6 +452,13 @@ elseif sab_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
         end
     })
+    local GameButton3 = GameTab:CreateButton({
+        Name = "Koronis (Key System)",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/hub.lua"))()
+        end
+    })
 elseif lt2_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Lumber Tycoon 2",
@@ -459,8 +466,40 @@ elseif lt2_id[game.PlaceId] then
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton1 = GameTab:CreateButton({
-        Name = "shit hub",
+    local GameButton1 = GameTab:CreateToggle({
+        Name = "View LoneCave",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            workspace.CurrentCamera.CameraSubject = LocalPlayer.Character.Humanoid
+            if Value then
+                for _, v in pairs(workspace:GetChildren()) do
+                    if v.Name == "TreeRegion" and v:FindFirstChild("Model") and v.Model.TreeClass.Value == "LoneCave" then
+                        workspace.CurrentCamera.CameraSubject = v
+                        return
+                    end
+                end
+            end
+        end
+    }, "Toggle")
+    local GameButton2 = GameTab:CreateToggle({
+        Name = "View CaveCrawler",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            workspace.CurrentCamera.CameraSubject = LocalPlayer.Character.Humanoid
+            if Value then
+                for _, v in pairs(workspace:GetChildren()) do
+                    if v.Name == "TreeRegion" and v:FindFirstChild("Model") and v.Model.TreeClass.Value == "CaveCrawler" then
+                        workspace.CurrentCamera.CameraSubject = v
+                        return
+                    end
+                end
+            end
+        end
+    }, "Toggle")
+    local GameButton3 = GameTab:CreateButton({
+        Name = "Kron Hub",
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
@@ -474,7 +513,7 @@ elseif arsenal_id[game.PlaceId] then
         ShowTitle = true
     })
     local GameButton1 = GameTab:CreateButton({
-        Name = "shit hub",
+        Name = "TbaoHubArsenal",
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))()
