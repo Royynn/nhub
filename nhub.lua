@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.0.9"
+scriptname = "nigger hub v2.1.0"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -408,8 +408,6 @@ if ink_id[game.PlaceId] then
         Name = "voidware (ac bypass)",
         Description = nil,
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/Anti-Logger/main/Easy-Mode"))()
-            task.wait(1)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()
         end
     })
