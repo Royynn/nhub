@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.4"
+scriptname = "nigger hub v2.1.5"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -384,6 +384,9 @@ local lt2_id = {
 local arsenal_id = {
     [286090429] = true
 }
+local hvh_id = {
+    [301549746] = true
+}
 local nigga_id = {
     [78880563336454] = true,
     [78611602637625] = true,
@@ -507,7 +510,7 @@ elseif lt2_id[game.PlaceId] then
     })
 elseif arsenal_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
-        Name = "Anal",
+        Name = "Arsenal",
         Icon = "shield",
         ImageSource = "Material",
         ShowTitle = true
@@ -517,6 +520,34 @@ elseif arsenal_id[game.PlaceId] then
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))()
+        end
+    })
+elseif hvh_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "Counter Blox",
+        Icon = "shield",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "astral hvh",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/inveris1337/dumping_nn/refs/heads/main/flohaxx/source.lua",true))()
+        end
+    })
+    local GameButton2 = GameTab:CreateButton({
+        Name = "zeroware",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/scytheXlol/ZeroWare-V2/main/Loader.luau"))()
+        end
+    })
+    local GameButton3 = GameTab:CreateButton({
+        Name = "esp",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md"))()
         end
     })
 elseif nigga_id[game.PlaceId] then
