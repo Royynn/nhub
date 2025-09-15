@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.6"
+scriptname = "nigger hub v2.1.5"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -425,13 +425,6 @@ if ink_id[game.PlaceId] then
         end
     })
     local GameButton4 = GameTab:CreateButton({
-        Name = "ambrion",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VisioneducationOfLuaCoding/Ink-Game/refs/heads/main/Ambrion"))()
-        end
-    })
-    local GameButton5 = GameTab:CreateButton({
         Name = "guard esp",
         Description = nil,
         Callback = function()
