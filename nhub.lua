@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.5"
+scriptname = "nigger hub v2.1.6"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -450,9 +450,11 @@ elseif sab_id[game.PlaceId] then
         Name = "Chilli",
         Description = nil,
         Callback = function()
+            Luna:Destroy()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/Anti-Logger/main/Easy-Mode"))()
             task.wait(1)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
+            script:Destroy()
         end
     })
     local GameButton3 = GameTab:CreateButton({
