@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.6"
+scriptname = "nigger hub v2.1.7"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -42,6 +42,37 @@ local autospinning = false
 local autoinvite = false
 local Keep = true
 local TeleportCheck = false
+local ink_id = {
+    [99567941238278] = true,
+    [125009265613167] = true,
+    [122816944483266] = true,
+    [121431824618615] = true,
+    [113555439745862] = true,
+    [76172769094087] = true
+}
+local sab_id = {
+    [109983668079237] = true,
+    [128762245270197] = true,
+    [96342491571673] = true
+}
+local lt2_id = {
+    [13822889] = true
+}
+local arsenal_id = {
+    [286090429] = true
+}
+local hvh_id = {
+    [301549746] = true
+}
+local nigga_id = {
+    [78880563336454] = true,
+    [78611602637625] = true,
+    [110937580440810] = true,
+    [116605021848414] = true,
+    [124805644313664] = true,
+    [127626589430786] = true,
+    [132493759931413] = true
+}
 --
 
 Players.LocalPlayer.OnTeleport:Connect(function(State)
@@ -298,42 +329,44 @@ local EmotesTab = Window:CreateTab({
     ImageSource = "Material",
     ShowTitle = true
 })
-local EmotesButton1 = EmotesTab:CreateToggle({
-    Name = "Jerk",
-    Description = nil,
-    CurrentValue = false,
-    Callback = function(Value)
-        if Value then
-            jtask = task.spawn(function()
-                while task.wait() do
-                    local isR15 = r15(LocalPlayer)
-                    if not track then
-                        track = loadAnimation(LocalPlayer.Character, not isR15 and 72042024 or 698251653)
+if not ink_id[game.PlaceId] then
+    local EmotesButton1 = EmotesTab:CreateToggle({
+        Name = "Jerk",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            if Value then
+                jtask = task.spawn(function()
+                    while task.wait() do
+                        local isR15 = r15(LocalPlayer)
+                        if not track then
+                            track = loadAnimation(LocalPlayer.Character, not isR15 and 72042024 or 698251653)
+                        end
+                        track.Priority = Enum.AnimationPriority.Action4
+                        track:Play()
+                        track:AdjustSpeed(isR15 and 0.7 or 0.65)
+                        track.TimePosition = 0.6
+                        task.wait(0.1)
+                        while track and track.TimePosition < (not isR15 and 0.65 or 0.7) do task.wait(0.1) end
+                        if track then
+                            track:Stop()
+                            track = nil
+                        end
                     end
-                    track.Priority = Enum.AnimationPriority.Action4
-                    track:Play()
-                    track:AdjustSpeed(isR15 and 0.7 or 0.65)
-                    track.TimePosition = 0.6
-                    task.wait(0.1)
-                    while track and track.TimePosition < (not isR15 and 0.65 or 0.7) do task.wait(0.1) end
-                    if track then
-                        track:Stop()
-                        track = nil
-                    end
+                end)
+            else
+                if jtask then
+                    task.cancel(jtask)
+                    jtask = nil
                 end
-            end)
-        else
-            if jtask then
-                task.cancel(jtask)
-                jtask = nil
-            end
-            if track then
-                track:Stop()
-                track = nil
+                if track then
+                    track:Stop()
+                    track = nil
+                end
             end
         end
-    end
-}, "Toggle")
+    }, "Toggle")
+end
 local EmotesButton2 = EmotesTab:CreateToggle({
     Name = "Shake Ass",
     Description = nil,
@@ -365,37 +398,6 @@ local EmotesButton3 = EmotesTab:CreateButton({
 })
 --
 -- GameTab
-local ink_id = {
-    [99567941238278] = true,
-    [125009265613167] = true,
-    [122816944483266] = true,
-    [121431824618615] = true,
-    [113555439745862] = true,
-    [76172769094087] = true
-}
-local sab_id = {
-    [109983668079237] = true,
-    [128762245270197] = true,
-    [96342491571673] = true
-}
-local lt2_id = {
-    [13822889] = true
-}
-local arsenal_id = {
-    [286090429] = true
-}
-local hvh_id = {
-    [301549746] = true
-}
-local nigga_id = {
-    [78880563336454] = true,
-    [78611602637625] = true,
-    [110937580440810] = true,
-    [116605021848414] = true,
-    [124805644313664] = true,
-    [127626589430786] = true,
-    [132493759931413] = true
-}
 if ink_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "ink GAY",
@@ -411,20 +413,13 @@ if ink_id[game.PlaceId] then
         end
     })
     local GameButton2 = GameTab:CreateButton({
-        Name = "voidware (ac bypass)",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()
-        end
-    })
-    local GameButton3 = GameTab:CreateButton({
         Name = "owlhook",
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0785b4b8f41683be513badd57f6a71c0.lua"))()
         end
     })
-    local GameButton4 = GameTab:CreateButton({
+    local GameButton3 = GameTab:CreateButton({
         Name = "guard esp",
         Description = nil,
         Callback = function()
