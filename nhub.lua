@@ -462,7 +462,13 @@ elseif sab_id[game.PlaceId] then
         Name = "Koronis (Key System)",
         Description = nil,
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/hub.lua"))()
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/hub.lua"))()
+            end)
+            task.wait(1)
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/antilogger.lua", true))()
+            end)
         end
     })
 elseif lt2_id[game.PlaceId] then
