@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.9"
+scriptname = "nigger hub v2.2.0"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -550,4 +550,14 @@ elseif counterblox_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md"))()
         end
     })
+end
 --
+--[[
+local Button = Tab:CreateButton({
+    Name = "Button",
+    Description = nil,
+    Callback = function()
+        return
+    end
+})
+--]]
