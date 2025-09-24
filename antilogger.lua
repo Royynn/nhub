@@ -4,8 +4,7 @@ local StarterGui = game:GetService("StarterGui")
 print("[Anti-Logger] Blocking any shady requests...")
 
 local dangerousDomains = {
-    "webhook",
-    "webhook.party"
+    "webhook"
 }
 
 local function isBlockedUrl(url)
