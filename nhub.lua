@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.0"
+scriptname = "nigger hub v2.2.1"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -12,7 +12,7 @@ function loadAnimation(char, animid)
     local humanoid = char:WaitForChild("Humanoid")
     local animator = humanoid:FindFirstChildOfClass("Animator")
     if not animator then
-        animator = Instance.new("Animator")
+        animator = Instance.new("Animator") 
         animator.Parent = humanoid
     end
     local anim = Instance.new("Animation")
@@ -469,7 +469,33 @@ elseif lt2_id[game.PlaceId] then
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton1 = GameTab:CreateToggle({
+    local GameButton1 = GameTab:CreateButton({
+        Name = "serverhop",
+        Description = nil,
+        Callback = function()
+            local servers = {}
+            local req = game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true")
+            local body = HttpService:JSONDecode(req)
+            if body and body.data then
+                for i, v in next, body.data do
+                    if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                        table.insert(servers, 1, v.id)
+                    end
+                end
+            end
+            if #servers > 0 then
+                TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], Players.LocalPlayer)
+            else
+                Luna:Notification({ 
+                    Title = "Serverhop",
+                    Icon = "search",
+                    ImageSource = "Material",
+                    Content = "Couldn't find a server."
+                })
+            end
+        end
+    })
+    local GameButton2 = GameTab:CreateToggle({
         Name = "View LoneCave",
         Description = nil,
         CurrentValue = false,
@@ -485,7 +511,7 @@ elseif lt2_id[game.PlaceId] then
             end
         end
     }, "Toggle")
-    local GameButton2 = GameTab:CreateToggle({
+    local GameButton3 = GameTab:CreateToggle({
         Name = "View CaveCrawler",
         Description = nil,
         CurrentValue = false,
@@ -501,7 +527,7 @@ elseif lt2_id[game.PlaceId] then
             end
         end
     }, "Toggle")
-    local GameButton3 = GameTab:CreateButton({
+    local GameButton4 = GameTab:CreateButton({
         Name = "Kron Hub",
         Description = nil,
         Callback = function()
