@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.7"
+scriptname = "nigger hub v2.1.8"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -446,9 +446,15 @@ elseif sab_id[game.PlaceId] then
         Description = nil,
         Callback = function()
             Luna:Destroy()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/Anti-Logger/main/Easy-Mode"))()
             task.wait(1)
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua", true))()
+            end)
+            task.wait(1)
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/antilogger.lua", true))()
+            end)
+            task.wait(1)
             script:Destroy()
         end
     })
