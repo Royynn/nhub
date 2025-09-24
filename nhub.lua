@@ -463,7 +463,7 @@ elseif sab_id[game.PlaceId] then
         Description = nil,
         Callback = function()
             pcall(function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/hub.lua"))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/hub.lua", true))()
             end)
             task.wait(1)
             pcall(function()
