@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.1.8"
+scriptname = "nigger hub v2.1.9"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -61,17 +61,8 @@ local lt2_id = {
 local arsenal_id = {
     [286090429] = true
 }
-local hvh_id = {
+local counterblox_id = {
     [301549746] = true
-}
-local nigga_id = {
-    [78880563336454] = true,
-    [78611602637625] = true,
-    [110937580440810] = true,
-    [116605021848414] = true,
-    [124805644313664] = true,
-    [127626589430786] = true,
-    [132493759931413] = true
 }
 --
 
@@ -531,7 +522,7 @@ elseif arsenal_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))()
         end
     })
-elseif hvh_id[game.PlaceId] then
+elseif counterblox_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Counter Blox",
         Icon = "shield",
@@ -559,67 +550,4 @@ elseif hvh_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md"))()
         end
     })
-elseif nigga_id[game.PlaceId] then
-    local GameTab = Window:CreateTab({
-        Name = "nigga cult",
-        Icon = "favorite",
-        ImageSource = "Material",
-        ShowTitle = true
-    })
-    local GameButton1 = GameTab:CreateToggle({
-        Name = "auto invite",
-        Description = nil,
-        CurrentValue = false,
-        Callback = function(Value)
-            autoinvite = Value
-        end
-    }, "Toggle")
-    local GameButton2 = GameTab:CreateButton({
-        Name = "spam",
-        Description = nil,
-        Callback = function()
-            for _ = 1, 3 do
-                task.wait(0.1)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "Ꙇeสvefꞅჿmyჿมꞅfมcꝁiถgรңịַttỵַcꞅewⴖჿw!")
-                task.wait(0.1)
-                game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "jჿintһeⴖῘggสธeӽcꞅewyჿมรtมpidถเ่ʛʛeꞅธ!")
-            end
-        end
-    })
-    local GameButton3 = GameTab:CreateButton({
-        Name = "serverhop",
-        Description = nil,
-        Callback = function()
-            local servers = {}
-            local req = game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true")
-            local body = HttpService:JSONDecode(req)
-            if body and body.data then
-                for i, v in next, body.data do
-                    if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
-                        table.insert(servers, 1, v.id)
-                    end
-                end
-            end
-            if #servers > 0 then
-                TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], Players.LocalPlayer)
-            else
-                Luna:Notification({ 
-                    Title = "Serverhop",
-                    Icon = "search",
-                    ImageSource = "Material",
-                    Content = "Couldn't find a server."
-                })
-            end
-        end
-    })
-end
 --
---[[
-local Button = Tab:CreateButton({
-    Name = "Button",
-    Description = nil,
-    Callback = function()
-        return
-    end
-})
---]]
