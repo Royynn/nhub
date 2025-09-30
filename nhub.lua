@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.1"
+scriptname = "nigger hub v2.2.2"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -39,7 +39,6 @@ local track = nil
 local jtask = nil
 local CURRENTTRACK
 local autospinning = false
-local autoinvite = false
 local Keep = true
 local TeleportCheck = false
 local ink_id = {
@@ -55,11 +54,19 @@ local sab_id = {
     [128762245270197] = true,
     [96342491571673] = true
 }
+local survive99nights_id = {
+    [79546208627805] = true,
+    [126371807511901] = true,
+    [126509999114328] = true
+}
 local lt2_id = {
     [13822889] = true
 }
 local arsenal_id = {
     [286090429] = true
+}
+local counterblox_id = {
+    [301549746] = true
 }
 local counterblox_id = {
     [301549746] = true
@@ -76,21 +83,7 @@ end)
 task.spawn(function()
     while task.wait(10) do
         if autospinning then
-            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/GalaxyEventService/Spin"):FireServer()
-        end
-    end
-end)
-
-task.spawn(function()
-    while task.wait(1) do
-        if autoinvite then
-            for _, v in pairs(Players:GetPlayers()) do
-                local attr = v:GetAttribute("guildId")
-                if attr == 0 then
-                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RequestRecruit"):FireServer(v)
-                    task.wait(1)
-                end
-            end
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/YinYangEventService/Spin"):FireServer()
         end
     end
 end)
@@ -240,8 +233,9 @@ local ChatTab = Window:CreateTab({
     Name = "Chat",
     Icon = "chat",
     ImageSource = "Material",
-    ShowTitle = true
+    ShowTitle = false
 })
+ChatTab:CreateSection('Set your language to "Қазақ тілі" for this to work!')
 local ChatButton1 = ChatTab:CreateButton({
     Name = "clear chat",
     Description = nil,
@@ -397,7 +391,7 @@ if ink_id[game.PlaceId] then
         ShowTitle = true
     })
     local GameButton1 = GameTab:CreateButton({
-        Name = "teleport to jerking position",
+        Name = "teleport (jerk is patched :C)",
         Description = nil,
         Callback = function()
             game.Players.LocalPlayer.Character:PivotTo(CFrame.new(Vector3.new(197.5, 56, 25)))
@@ -574,6 +568,20 @@ elseif counterblox_id[game.PlaceId] then
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md"))()
+        end
+    })
+elseif survive99nights_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "99niggers",
+        Icon = "forest",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "xvc 99 nights",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/XVCHub/Games/main/99NightsintheForest",true))()
         end
     })
 end
