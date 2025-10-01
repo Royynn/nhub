@@ -68,9 +68,6 @@ local arsenal_id = {
 local counterblox_id = {
     [301549746] = true
 }
-local counterblox_id = {
-    [301549746] = true
-}
 --
 
 Players.LocalPlayer.OnTeleport:Connect(function(State)
