@@ -570,7 +570,7 @@ elseif counterblox_id[game.PlaceId] then
 elseif survive99nights_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "99niggers",
-        Icon = "forest",
+        Icon = "park",
         ImageSource = "Material",
         ShowTitle = true
     })
