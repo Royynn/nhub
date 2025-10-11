@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.2"
+scriptname = "nigger hub v2.2.3"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -35,6 +35,7 @@ local PlaceId, JobId = game.PlaceId, game.JobId
 local LocalPlayer = Players.LocalPlayer
 
 local JoinJobId
+local JoinVipId
 local track = nil
 local jtask = nil
 local CURRENTTRACK
@@ -53,6 +54,9 @@ local sab_id = {
     [109983668079237] = true,
     [128762245270197] = true,
     [96342491571673] = true
+}
+local pvb_id = {
+    [127742093697776] = true
 }
 local survive99nights_id = {
     [79546208627805] = true,
@@ -136,6 +140,33 @@ local MainButton2 = MainTab:CreateButton({
 })
 MainTab:CreateDivider()
 local MainButton3 = MainTab:CreateButton({
+    Name = "join phantom vip server",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/veil0x14/LocalScripts/refs/heads/main/pg.lua"))()
+    end
+})
+local MainButton4 = MainTab:CreateInput({
+    Name = "vipid",
+    Description = nil,
+    PlaceholderText = "",
+    CurrentValue = "",
+    Numeric = false,
+    MaxCharacters = nil,
+    Enter = false,
+    Callback = function(Text)
+        JoinVipId = Text
+    end
+}, "Input")
+local MainButton5 = MainTab:CreateButton({
+    Name = "join",
+    Description = nil,
+    Callback = function()
+        game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(PlaceId, "", JoinVipId)
+    end
+})
+MainTab:CreateDivider()
+local MainButton6 = MainTab:CreateButton({
     Name = "copy jobid",
     Description = nil,
     Callback = function()
@@ -148,7 +179,7 @@ local MainButton3 = MainTab:CreateButton({
         })
     end
 })
-local MainButton4 = MainTab:CreateInput({
+local MainButton7 = MainTab:CreateInput({
     Name = "jobid",
     Description = nil,
     PlaceholderText = "",
@@ -160,7 +191,7 @@ local MainButton4 = MainTab:CreateInput({
         JoinJobId = Text
     end
 }, "Input")
-local MainButton5 = MainTab:CreateButton({
+local MainButton8 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
@@ -168,7 +199,7 @@ local MainButton5 = MainTab:CreateButton({
     end
 })
 MainTab:CreateDivider()
-local MainButton6 = MainTab:CreateButton({
+local MainButton9 = MainTab:CreateButton({
     Name = "unload",
     Description = nil,
     Callback = function()
@@ -451,6 +482,20 @@ elseif sab_id[game.PlaceId] then
             pcall(function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/antilogger.lua", true))()
             end)
+        end
+    })
+elseif pvb_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "Plants vs Braindicks",
+        Icon = "local_florist",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "walvy",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Walvy666/Triplesix/main/loader.lua"))()
         end
     })
 elseif lt2_id[game.PlaceId] then
