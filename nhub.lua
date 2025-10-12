@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.3"
+scriptname = "nigger hub v2.2.4"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -40,6 +40,7 @@ local track = nil
 local jtask = nil
 local CURRENTTRACK
 local autospinning = false
+local autopomidorquest = false
 local Keep = true
 local TeleportCheck = false
 local ink_id = {
@@ -85,6 +86,14 @@ task.spawn(function()
     while task.wait(10) do
         if autospinning then
             game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/YinYangEventService/Spin"):FireServer()
+        end
+    end
+end)
+
+task.spawn(function()
+    while task.wait(10) do
+        if autopomidorquest then
+            fireproximityprompt(workspace.ScriptedMap.Event.EventRewards.TalkPart.ProximityPrompt)
         end
     end
 end)
@@ -491,7 +500,15 @@ elseif pvb_id[game.PlaceId] then
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton1 = GameTab:CreateButton({
+    local GameButton1 = GameTab:CreateToggle({
+        Name = "Auto stupid nigga porn quest",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            autopomidorquest = Value
+        end
+    }, "Toggle")
+    local GameButton2 = GameTab:CreateButton({
         Name = "walvy",
         Description = nil,
         Callback = function()
@@ -592,7 +609,7 @@ elseif counterblox_id[game.PlaceId] then
         ShowTitle = true
     })
     local GameButton1 = GameTab:CreateButton({
-        Name = "astral hvh",
+        Name = "astral hvh (lag shit)",
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/inveris1337/dumping_nn/refs/heads/main/flohaxx/source.lua",true))()
