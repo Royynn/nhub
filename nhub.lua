@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.6"
+scriptname = "nigger hub v2.2.7"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -37,7 +37,6 @@ local VirtualUser = game:service("VirtualUser")
 
 local JoinJobId
 local JoinVipId
-local JoinPlaceId = game.PlaceId
 local track = nil
 local jtask = nil
 local CURRENTTRACK
@@ -175,11 +174,11 @@ local MainButton4 = MainTab:CreateButton({
     Name = "join phantom vip server",
     Description = nil,
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/veil0x14/LocalScripts/refs/heads/main/pg.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/reserved_access_generator.lua"))()
     end
 })
 local MainButton5 = MainTab:CreateInput({
-    Name = "vipid",
+    Name = "accessCode",
     Description = nil,
     PlaceholderText = "",
     CurrentValue = "",
@@ -190,27 +189,15 @@ local MainButton5 = MainTab:CreateInput({
         JoinVipId = Text
     end
 }, "Input")
-local MainButton6 = MainTab:CreateInput({
-    Name = "placeid",
-    Description = nil,
-    PlaceholderText = game.PlaceId,
-    CurrentValue = game.PlaceId,
-    Numeric = false,
-    MaxCharacters = nil,
-    Enter = false,
-    Callback = function(Text)
-        JoinPlaceId = Text
-    end
-}, "Input")
-local MainButton7 = MainTab:CreateButton({
+local MainButton6 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
-        game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(JoinPlaceId, "", JoinVipId)
+        game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(PlaceId, "", JoinVipId)
     end
 })
 MainTab:CreateDivider()
-local MainButton8 = MainTab:CreateButton({
+local MainButton7 = MainTab:CreateButton({
     Name = "copy jobid",
     Description = nil,
     Callback = function()
@@ -223,7 +210,7 @@ local MainButton8 = MainTab:CreateButton({
         })
     end
 })
-local MainButton9 = MainTab:CreateInput({
+local MainButton8 = MainTab:CreateInput({
     Name = "jobid",
     Description = nil,
     PlaceholderText = "",
@@ -235,7 +222,7 @@ local MainButton9 = MainTab:CreateInput({
         JoinJobId = Text
     end
 }, "Input")
-local MainButton10 = MainTab:CreateButton({
+local MainButton9 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
@@ -243,7 +230,7 @@ local MainButton10 = MainTab:CreateButton({
     end
 })
 MainTab:CreateDivider()
-local MainButton11 = MainTab:CreateButton({
+local MainButton10 = MainTab:CreateButton({
     Name = "unload",
     Description = nil,
     Callback = function()
