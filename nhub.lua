@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.4"
+scriptname = "nigger hub v2.2.5"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -36,6 +36,7 @@ local LocalPlayer = Players.LocalPlayer
 
 local JoinJobId
 local JoinVipId
+local JoinPlaceId = game.PlaceId
 local track = nil
 local jtask = nil
 local CURRENTTRACK
@@ -49,6 +50,7 @@ local ink_id = {
     [122816944483266] = true,
     [121431824618615] = true,
     [113555439745862] = true,
+    [119099244949868] = true,
     [76172769094087] = true
 }
 local sab_id = {
@@ -167,15 +169,27 @@ local MainButton4 = MainTab:CreateInput({
         JoinVipId = Text
     end
 }, "Input")
-local MainButton5 = MainTab:CreateButton({
+local MainButton5 = MainTab:CreateInput({
+    Name = "placeid",
+    Description = nil,
+    PlaceholderText = game.PlaceId,
+    CurrentValue = game.PlaceId,
+    Numeric = false,
+    MaxCharacters = nil,
+    Enter = false,
+    Callback = function(Text)
+        JoinPlaceId = Text
+    end
+}, "Input")
+local MainButton6 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
-        game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(PlaceId, "", JoinVipId)
+        game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(JoinPlaceId, "", JoinVipId)
     end
 })
 MainTab:CreateDivider()
-local MainButton6 = MainTab:CreateButton({
+local MainButton7 = MainTab:CreateButton({
     Name = "copy jobid",
     Description = nil,
     Callback = function()
@@ -188,7 +202,7 @@ local MainButton6 = MainTab:CreateButton({
         })
     end
 })
-local MainButton7 = MainTab:CreateInput({
+local MainButton8 = MainTab:CreateInput({
     Name = "jobid",
     Description = nil,
     PlaceholderText = "",
@@ -200,7 +214,7 @@ local MainButton7 = MainTab:CreateInput({
         JoinJobId = Text
     end
 }, "Input")
-local MainButton8 = MainTab:CreateButton({
+local MainButton9 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
@@ -208,7 +222,7 @@ local MainButton8 = MainTab:CreateButton({
     end
 })
 MainTab:CreateDivider()
-local MainButton9 = MainTab:CreateButton({
+local MainButton10 = MainTab:CreateButton({
     Name = "unload",
     Description = nil,
     Callback = function()
