@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.5"
+scriptname = "nigger hub v2.2.6"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -33,6 +33,7 @@ local HttpService = cloneref(game:GetService("HttpService"))
 local TeleportService = cloneref(game:GetService("TeleportService"))
 local PlaceId, JobId = game.PlaceId, game.JobId
 local LocalPlayer = Players.LocalPlayer
+local VirtualUser = game:service("VirtualUser")
 
 local JoinJobId
 local JoinVipId
@@ -40,6 +41,7 @@ local JoinPlaceId = game.PlaceId
 local track = nil
 local jtask = nil
 local CURRENTTRACK
+local antiafk = false
 local autospinning = false
 local autopomidorquest = false
 local Keep = true
@@ -85,6 +87,16 @@ Players.LocalPlayer.OnTeleport:Connect(function(State)
 end)
 
 task.spawn(function()
+    while task.wait(60) do
+        if antiafk then
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton1(Vector2.new())
+            mouse2click()
+        end
+    end
+end)
+
+task.spawn(function()
     while task.wait(10) do
         if autospinning then
             game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/YinYangEventService/Spin"):FireServer()
@@ -110,7 +122,16 @@ local MainTab = Window:CreateTab({
     ImageSource = "Material",
     ShowTitle = false
 })
-local MainButton1 = MainTab:CreateButton({
+local MainButton1 = MainTab:CreateToggle({
+    Name = "anti afk",
+    Description = nil,
+    CurrentValue = false,
+    Callback = function(Value)
+        antiafk = Value
+    end
+}, "Toggle")
+MainTab:CreateDivider()
+local MainButton2 = MainTab:CreateButton({
     Name = "rejoin",
     Description = nil,
     Callback = function()
@@ -123,7 +144,7 @@ local MainButton1 = MainTab:CreateButton({
         end
     end
 })
-local MainButton2 = MainTab:CreateButton({
+local MainButton3 = MainTab:CreateButton({
     Name = "serverhop",
     Description = nil,
     Callback = function()
@@ -150,14 +171,14 @@ local MainButton2 = MainTab:CreateButton({
     end
 })
 MainTab:CreateDivider()
-local MainButton3 = MainTab:CreateButton({
+local MainButton4 = MainTab:CreateButton({
     Name = "join phantom vip server",
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/veil0x14/LocalScripts/refs/heads/main/pg.lua"))()
     end
 })
-local MainButton4 = MainTab:CreateInput({
+local MainButton5 = MainTab:CreateInput({
     Name = "vipid",
     Description = nil,
     PlaceholderText = "",
@@ -169,7 +190,7 @@ local MainButton4 = MainTab:CreateInput({
         JoinVipId = Text
     end
 }, "Input")
-local MainButton5 = MainTab:CreateInput({
+local MainButton6 = MainTab:CreateInput({
     Name = "placeid",
     Description = nil,
     PlaceholderText = game.PlaceId,
@@ -181,7 +202,7 @@ local MainButton5 = MainTab:CreateInput({
         JoinPlaceId = Text
     end
 }, "Input")
-local MainButton6 = MainTab:CreateButton({
+local MainButton7 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
@@ -189,7 +210,7 @@ local MainButton6 = MainTab:CreateButton({
     end
 })
 MainTab:CreateDivider()
-local MainButton7 = MainTab:CreateButton({
+local MainButton8 = MainTab:CreateButton({
     Name = "copy jobid",
     Description = nil,
     Callback = function()
@@ -202,7 +223,7 @@ local MainButton7 = MainTab:CreateButton({
         })
     end
 })
-local MainButton8 = MainTab:CreateInput({
+local MainButton9 = MainTab:CreateInput({
     Name = "jobid",
     Description = nil,
     PlaceholderText = "",
@@ -214,7 +235,7 @@ local MainButton8 = MainTab:CreateInput({
         JoinJobId = Text
     end
 }, "Input")
-local MainButton9 = MainTab:CreateButton({
+local MainButton10 = MainTab:CreateButton({
     Name = "join",
     Description = nil,
     Callback = function()
@@ -222,7 +243,7 @@ local MainButton9 = MainTab:CreateButton({
     end
 })
 MainTab:CreateDivider()
-local MainButton10 = MainTab:CreateButton({
+local MainButton11 = MainTab:CreateButton({
     Name = "unload",
     Description = nil,
     Callback = function()
