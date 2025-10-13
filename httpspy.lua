@@ -1,4 +1,4 @@
---// Created by depso!
+--// Created by depso! (absolutely love him)
 -- This is a simple Http request spy with a UI interface
 -- This is designed to work on very basic level exploits such as Xeno and Solara
 
@@ -400,4 +400,5 @@ end
 
 --// Init
 AddHooks()
+
 Hook:ApplyHooks()
