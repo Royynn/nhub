@@ -260,3 +260,4 @@ end
 
 local accessCode, _ = GenerateReservedServerCode(game.PlaceId)
 game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(game.PlaceId, "", accessCode)
+setclipboard(accessCode)
