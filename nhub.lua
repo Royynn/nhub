@@ -86,7 +86,7 @@ Players.LocalPlayer.OnTeleport:Connect(function(State)
 end)
 
 task.spawn(function()
-    while task.wait(60) do
+    while task.wait(600) do
         if antiafk then
             VirtualUser:CaptureController()
             VirtualUser:ClickButton1(Vector2.new())
