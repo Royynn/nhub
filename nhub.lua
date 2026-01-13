@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.2.7"
+scriptname = "nigger hub v2.3"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -36,12 +36,10 @@ local LocalPlayer = Players.LocalPlayer
 local VirtualUser = game:service("VirtualUser")
 
 local JoinJobId
-local JoinVipId
 local track = nil
 local jtask = nil
 local CURRENTTRACK
 local antiafk = false
-local autospinning = false
 local autopomidorquest = false
 local Keep = true
 local TeleportCheck = false
@@ -89,16 +87,8 @@ task.spawn(function()
     while task.wait(600) do
         if antiafk then
             VirtualUser:CaptureController()
-            VirtualUser:ClickButton1(Vector2.new())
+            VirtualUser:ClickButton2(Vector2.new())
             mouse2click()
-        end
-    end
-end)
-
-task.spawn(function()
-    while task.wait(10) do
-        if autospinning then
-            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Net"):WaitForChild("RE/YinYangEventService/Spin"):FireServer()
         end
     end
 end)
@@ -167,33 +157,6 @@ local MainButton3 = MainTab:CreateButton({
                 Content = "Couldn't find a server."
             })
         end
-    end
-})
-MainTab:CreateDivider()
-local MainButton4 = MainTab:CreateButton({
-    Name = "join phantom vip server",
-    Description = nil,
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/reserved_access_generator.lua"))()
-    end
-})
-local MainButton5 = MainTab:CreateInput({
-    Name = "accessCode",
-    Description = nil,
-    PlaceholderText = "",
-    CurrentValue = "",
-    Numeric = false,
-    MaxCharacters = nil,
-    Enter = false,
-    Callback = function(Text)
-        JoinVipId = Text
-    end
-}, "Input")
-local MainButton6 = MainTab:CreateButton({
-    Name = "join",
-    Description = nil,
-    Callback = function()
-        game.RobloxReplicatedStorage.ContactListIrisInviteTeleport:FireServer(PlaceId, "", JoinVipId)
     end
 })
 MainTab:CreateDivider()
@@ -412,14 +375,14 @@ if not ink_id[game.PlaceId] then
     }, "Toggle")
 end
 local EmotesButton2 = EmotesTab:CreateToggle({
-    Name = "Shake Ass",
+    Name = "Take The L",
     Description = nil,
     CurrentValue = false,
     Callback = function(Value)
         local char = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
         local hrp = char:FindFirstChild("HumanoidRootPart")
         if Value then
-            CURRENTTRACK = loadAnimation(char, 136720812089001)
+            CURRENTTRACK = loadAnimation(char, 78653596566468)
             CURRENTTRACK.Looped = true
             CURRENTTRACK.Priority = Enum.AnimationPriority.Action4
             CURRENTTRACK:Play(0, 99)
@@ -472,20 +435,12 @@ if ink_id[game.PlaceId] then
     })
 elseif sab_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
-        Name = "Steal A Brainrot",
+        Name = "Steal A Gayvrot",
         Icon = "do_not_touch",
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton1 = GameTab:CreateToggle({
-        Name = "Auto Spin",
-        Description = nil,
-        CurrentValue = false,
-        Callback = function(Value)
-            autospinning = Value
-        end
-    }, "Toggle")
-    local GameButton2 = GameTab:CreateButton({
+    local GameButton1 = GameTab:CreateButton({
         Name = "Chilli",
         Description = nil,
         Callback = function()
@@ -495,14 +450,10 @@ elseif sab_id[game.PlaceId] then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua", true))()
             end)
             task.wait(1)
-            pcall(function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/antilogger.lua", true))()
-            end)
-            task.wait(1)
             script:Destroy()
         end
     })
-    local GameButton3 = GameTab:CreateButton({
+    local GameButton2 = GameTab:CreateButton({
         Name = "Koronis (Key System)",
         Description = nil,
         Callback = function()
