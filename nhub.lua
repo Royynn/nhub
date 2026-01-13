@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.3"
+scriptname = "nigger hub v2.3.1"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -582,24 +582,10 @@ elseif counterblox_id[game.PlaceId] then
         ShowTitle = true
     })
     local GameButton1 = GameTab:CreateButton({
-        Name = "astral hvh (lag shit)",
+        Name = "solaris.lol",
         Description = nil,
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/inveris1337/dumping_nn/refs/heads/main/flohaxx/source.lua",true))()
-        end
-    })
-    local GameButton2 = GameTab:CreateButton({
-        Name = "zeroware",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/scytheXlol/ZeroWare-V2/main/Loader.luau"))()
-        end
-    })
-    local GameButton3 = GameTab:CreateButton({
-        Name = "esp",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/toasty-dev/pissblox/main/solaris_bootstrapper.lua",true))()
         end
     })
 elseif survive99nights_id[game.PlaceId] then
