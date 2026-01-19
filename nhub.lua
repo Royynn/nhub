@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.3.1"
+scriptname = "nigger hub v2.3.2"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -40,7 +40,6 @@ local track = nil
 local jtask = nil
 local CURRENTTRACK
 local antiafk = false
-local autopomidorquest = false
 local Keep = true
 local TeleportCheck = false
 local ink_id = {
@@ -89,14 +88,6 @@ task.spawn(function()
             VirtualUser:CaptureController()
             VirtualUser:ClickButton2(Vector2.new())
             mouse2click()
-        end
-    end
-end)
-
-task.spawn(function()
-    while task.wait(10) do
-        if autopomidorquest then
-            fireproximityprompt(workspace.ScriptedMap.Event.EventRewards.TalkPart.ProximityPrompt)
         end
     end
 end)
@@ -250,7 +241,7 @@ local UniversalButton5 = UniversalTab:CreateButton({
     end
 })
 --
--- ChatTab
+--[[ ChatTab
 local ChatTab = Window:CreateTab({
     Name = "Chat",
     Icon = "chat",
@@ -328,7 +319,7 @@ local ChatButton7 = ChatTab:CreateButton({
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("іṁjәַꞅꝁịַṅַg")
     end
 })
---
+--]]
 -- EmotesTab
 local EmotesTab = Window:CreateTab({
     Name = "Emotes",
@@ -405,35 +396,7 @@ local EmotesButton3 = EmotesTab:CreateButton({
 })
 --
 -- GameTab
-if ink_id[game.PlaceId] then
-    local GameTab = Window:CreateTab({
-        Name = "ink GAY",
-        Icon = "accessible_forward",
-        ImageSource = "Material",
-        ShowTitle = true
-    })
-    local GameButton1 = GameTab:CreateButton({
-        Name = "teleport (jerk is patched :C)",
-        Description = nil,
-        Callback = function()
-            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(Vector3.new(197.5, 56, 25)))
-        end
-    })
-    local GameButton2 = GameTab:CreateButton({
-        Name = "owlhook",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0785b4b8f41683be513badd57f6a71c0.lua"))()
-        end
-    })
-    local GameButton3 = GameTab:CreateButton({
-        Name = "guard esp",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/guard3sp.lua"))()
-        end
-    })
-elseif sab_id[game.PlaceId] then
+if sab_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Steal A Gayvrot",
         Icon = "do_not_touch",
@@ -444,25 +407,8 @@ elseif sab_id[game.PlaceId] then
         Name = "Chilli",
         Description = nil,
         Callback = function()
-            Luna:Destroy()
-            task.wait(1)
             pcall(function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua", true))()
-            end)
-            task.wait(1)
-            script:Destroy()
-        end
-    })
-    local GameButton2 = GameTab:CreateButton({
-        Name = "Koronis (Key System)",
-        Description = nil,
-        Callback = function()
-            pcall(function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/hub.lua", true))()
-            end)
-            task.wait(1)
-            pcall(function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/antilogger.lua", true))()
             end)
         end
     })
@@ -473,15 +419,7 @@ elseif pvb_id[game.PlaceId] then
         ImageSource = "Material",
         ShowTitle = true
     })
-    local GameButton1 = GameTab:CreateToggle({
-        Name = "Auto stupid nigga porn quest",
-        Description = nil,
-        CurrentValue = false,
-        Callback = function(Value)
-            autopomidorquest = Value
-        end
-    }, "Toggle")
-    local GameButton2 = GameTab:CreateButton({
+    local GameButton1 = GameTab:CreateButton({
         Name = "walvy",
         Description = nil,
         Callback = function()
