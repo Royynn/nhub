@@ -232,7 +232,7 @@ local UniversalButton3 = UniversalTab:CreateButton({
     Name = "product faker",
     Description = nil,
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/IcantAffordSynapse/productfka/refs/heads/main/works.lua"))()
+        loadstring(game:HttpGet("https://pastefy.app/yVlxzwk8/raw"))()
     end
 })
 local UniversalButton4 = UniversalTab:CreateButton({
