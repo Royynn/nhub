@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.4.0"
+scriptname = "nigger hub v2.4.1"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -185,6 +185,16 @@ local MainButton9 = MainTab:CreateButton({
 })
 MainTab:CreateDivider()
 local MainButton10 = MainTab:CreateButton({
+    Name = "reload",
+    Description = nil,
+    Callback = function()
+        Keep = true
+        Luna:Destroy()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/nhub.lua'))()
+        script:Destroy()
+    end
+})
+local MainButton11 = MainTab:CreateButton({
     Name = "unload",
     Description = nil,
     Callback = function()
