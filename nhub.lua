@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.4.1"
+scriptname = "nigger hub v2.4.2"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -42,15 +42,6 @@ local CURRENTTRACK
 local antiafk = false
 local Keep = true
 local TeleportCheck = false
-local ink_id = {
-    [99567941238278] = true,
-    [125009265613167] = true,
-    [122816944483266] = true,
-    [121431824618615] = true,
-    [113555439745862] = true,
-    [119099244949868] = true,
-    [76172769094087] = true
-}
 local sab_id = {
     [109983668079237] = true,
     [128762245270197] = true,
@@ -58,11 +49,6 @@ local sab_id = {
 }
 local pvb_id = {
     [127742093697776] = true
-}
-local survive99nights_id = {
-    [79546208627805] = true,
-    [126371807511901] = true,
-    [126509999114328] = true
 }
 local lt2_id = {
     [13822889] = true
@@ -72,6 +58,14 @@ local arsenal_id = {
 }
 local counterblox_id = {
     [301549746] = true
+}
+local rivals_id = {
+    [17625359962] = true,
+    [18126510175] = true,
+    [71874690745115] = true,
+    [117398147513099] = true,
+    [129604661913557] = true,
+    [133215910299950] = true
 }
 --
 
@@ -344,44 +338,42 @@ local EmotesTab = Window:CreateTab({
     ImageSource = "Material",
     ShowTitle = true
 })
-if not ink_id[game.PlaceId] then
-    local EmotesButton1 = EmotesTab:CreateToggle({
-        Name = "Jerk",
-        Description = nil,
-        CurrentValue = false,
-        Callback = function(Value)
-            if Value then
-                jtask = task.spawn(function()
-                    while task.wait() do
-                        local isR15 = r15(LocalPlayer)
-                        if not track then
-                            track = loadAnimation(LocalPlayer.Character, not isR15 and 72042024 or 698251653)
-                        end
-                        track.Priority = Enum.AnimationPriority.Action4
-                        track:Play()
-                        track:AdjustSpeed(isR15 and 0.7 or 0.65)
-                        track.TimePosition = 0.6
-                        task.wait(0.1)
-                        while track and track.TimePosition < (not isR15 and 0.65 or 0.7) do task.wait(0.1) end
-                        if track then
-                            track:Stop()
-                            track = nil
-                        end
+local EmotesButton1 = EmotesTab:CreateToggle({
+    Name = "Jerk",
+    Description = nil,
+    CurrentValue = false,
+    Callback = function(Value)
+        if Value then
+            jtask = task.spawn(function()
+                while task.wait() do
+                    local isR15 = r15(LocalPlayer)
+                    if not track then
+                        track = loadAnimation(LocalPlayer.Character, not isR15 and 72042024 or 698251653)
                     end
-                end)
-            else
-                if jtask then
-                    task.cancel(jtask)
-                    jtask = nil
+                    track.Priority = Enum.AnimationPriority.Action4
+                    track:Play()
+                    track:AdjustSpeed(isR15 and 0.7 or 0.65)
+                    track.TimePosition = 0.6
+                    task.wait(0.1)
+                    while track and track.TimePosition < (not isR15 and 0.65 or 0.7) do task.wait(0.1) end
+                    if track then
+                        track:Stop()
+                        track = nil
+                    end
                 end
-                if track then
-                    track:Stop()
-                    track = nil
-                end
+            end)
+        else
+            if jtask then
+                task.cancel(jtask)
+                jtask = nil
+            end
+            if track then
+                track:Stop()
+                track = nil
             end
         end
-    }, "Toggle")
-end
+    end
+}, "Toggle")
 local EmotesButton2 = EmotesTab:CreateToggle({
     Name = "Take The L",
     Description = nil,
@@ -543,18 +535,18 @@ elseif counterblox_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/toasty-dev/pissblox/main/solaris_bootstrapper.lua",true))()
         end
     })
-elseif survive99nights_id[game.PlaceId] then
+elseif rivals_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
-        Name = "99niggers",
-        Icon = "park",
+        Name = "Rivals",
+        Icon = "shield",
         ImageSource = "Material",
         ShowTitle = true
     })
     local GameButton1 = GameTab:CreateButton({
-        Name = "xvc 99 nights",
+        Name = "exploit.plus",
         Description = nil,
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/XVCHub/Games/main/99NightsintheForest",true))()
+            loadstring(game:HttpGet'https://exploit.plus/Loader')()
         end
     })
 end
