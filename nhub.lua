@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.4.2"
+scriptname = "nigger hub v2.4.5"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -58,6 +58,18 @@ local arsenal_id = {
 }
 local counterblox_id = {
     [301549746] = true
+}
+local doors_id = {
+    [6839171747] = true
+}
+local jb_id = {
+    [606849621] = true,
+    [17190407811] = true,
+    [17190408132] = true,
+    [108098425719662] = true
+}
+local gag2_id = {
+    [97598239454123] = true
 }
 local rivals_id = {
     [17625359962] = true,
@@ -245,6 +257,13 @@ local UniversalButton5 = UniversalTab:CreateButton({
 })
 UniversalTab:CreateDivider()
 local UniversalButton6 = UniversalTab:CreateButton({
+    Name = "cobalt",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://github.com/notpoiu/cobalt/releases/latest/download/Cobalt.luau"))()
+    end
+})
+local UniversalButton7 = UniversalTab:CreateButton({
     Name = "xvc hub",
     Description = nil,
     Callback = function()
@@ -408,7 +427,7 @@ local EmotesButton3 = EmotesTab:CreateButton({
 if sab_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Steal A Gayvrot",
-        Icon = "do_not_touch",
+        Icon = "star",
         ImageSource = "Material",
         ShowTitle = true
     })
@@ -421,24 +440,10 @@ if sab_id[game.PlaceId] then
             end)
         end
     })
-elseif pvb_id[game.PlaceId] then
-    local GameTab = Window:CreateTab({
-        Name = "Plants vs Braindicks",
-        Icon = "local_florist",
-        ImageSource = "Material",
-        ShowTitle = true
-    })
-    local GameButton1 = GameTab:CreateButton({
-        Name = "walvy",
-        Description = nil,
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Walvy666/Triplesix/main/loader.lua"))()
-        end
-    })
 elseif lt2_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Lumber Tycoon 2",
-        Icon = "park",
+        Icon = "star",
         ImageSource = "Material",
         ShowTitle = true
     })
@@ -510,7 +515,7 @@ elseif lt2_id[game.PlaceId] then
 elseif arsenal_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Arsenal",
-        Icon = "shield",
+        Icon = "star",
         ImageSource = "Material",
         ShowTitle = true
     })
@@ -524,7 +529,7 @@ elseif arsenal_id[game.PlaceId] then
 elseif counterblox_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Counter Blox",
-        Icon = "shield",
+        Icon = "star",
         ImageSource = "Material",
         ShowTitle = true
     })
@@ -538,7 +543,7 @@ elseif counterblox_id[game.PlaceId] then
 elseif rivals_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
         Name = "Rivals",
-        Icon = "shield",
+        Icon = "star",
         ImageSource = "Material",
         ShowTitle = true
     })
@@ -547,6 +552,55 @@ elseif rivals_id[game.PlaceId] then
         Description = nil,
         Callback = function()
             loadstring(game:HttpGet'https://exploit.plus/Loader')()
+        end
+    })
+elseif jb_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "Jail Break",
+        Icon = "star",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "sexation",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/730854e5b6499ee91deb1080e8e12ae3.lua"))()
+        end
+    })
+    local GameButton2 = GameTab:CreateButton({
+        Name = "autofarm",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"))()
+        end
+    })
+elseif gag2_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "grow a penis 2",
+        Icon = "star",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "Quartyz",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xQuartyx/QuartyzScript/main/Loader.lua"))()
+        end
+    })
+elseif doors_id[game.PlaceId] then
+    local GameTab = Window:CreateTab({
+        Name = "DUURZ",
+        Icon = "star",
+        ImageSource = "Material",
+        ShowTitle = true
+    })
+    local GameButton1 = GameTab:CreateButton({
+        Name = "sexation",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/730854e5b6499ee91deb1080e8e12ae3.lua"))()
         end
     })
 end
