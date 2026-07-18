@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.4.5"
+scriptname = "nigger hub v2.4.6"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -59,9 +59,6 @@ local arsenal_id = {
 local counterblox_id = {
     [301549746] = true
 }
-local doors_id = {
-    [6839171747] = true
-}
 local jb_id = {
     [606849621] = true,
     [17190407811] = true,
@@ -78,6 +75,9 @@ local rivals_id = {
     [117398147513099] = true,
     [129604661913557] = true,
     [133215910299950] = true
+}
+local unboxfactory_id = {
+    [138161219313147] = true
 }
 --
 
@@ -191,16 +191,29 @@ local MainButton9 = MainTab:CreateButton({
 })
 MainTab:CreateDivider()
 local MainButton10 = MainTab:CreateButton({
+    Name = "copy placeid",
+    Description = nil,
+    Callback = function()
+        setclipboard(PlaceId)
+        Luna:Notification({ 
+            Title = "PlaceId copied!",
+            Icon = "done",
+            ImageSource = "Material",
+            Content = PlaceId
+        })
+    end
+})
+local MainButton11 = MainTab:CreateButton({
     Name = "reload",
     Description = nil,
     Callback = function()
-        Keep = true
+        Keep = false
         Luna:Destroy()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/nhub.lua'))()
         script:Destroy()
     end
 })
-local MainButton11 = MainTab:CreateButton({
+local MainButton12 = MainTab:CreateButton({
     Name = "unload",
     Description = nil,
     Callback = function()
@@ -249,7 +262,7 @@ local UniversalButton4 = UniversalTab:CreateButton({
     end
 })
 local UniversalButton5 = UniversalTab:CreateButton({
-    Name = "faggot esp",
+    Name = "friend 3sp",
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/friend3sp.lua"))()
@@ -264,6 +277,13 @@ local UniversalButton6 = UniversalTab:CreateButton({
     end
 })
 local UniversalButton7 = UniversalTab:CreateButton({
+    Name = "dex",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+    end
+})
+local UniversalButton8 = UniversalTab:CreateButton({
     Name = "xvc hub",
     Description = nil,
     Callback = function()
@@ -271,85 +291,6 @@ local UniversalButton7 = UniversalTab:CreateButton({
     end
 })
 --
---[[ ChatTab
-local ChatTab = Window:CreateTab({
-    Name = "Chat",
-    Icon = "chat",
-    ImageSource = "Material",
-    ShowTitle = false
-})
-ChatTab:CreateSection('Set your language to "Қазақ тілі" for this to work!')
-local ChatButton1 = ChatTab:CreateButton({
-    Name = "clear chat",
-    Description = nil,
-    Callback = function()
-        for _ = 1, 4 do
-            task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("", 200))
-        end
-    end
-})
-local ChatButton2 = ChatTab:CreateButton({
-    Name = "nigger spam",
-    Description = nil,
-    Callback = function()
-        for _ = 1, 2 do
-            task.wait(0.1)
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(string.rep("", 200))
-		end
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "fมϲҟถเ่ʛʛeꞅธ")
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "เ่ꜧสteถเ่ʛʛeꞅธ")
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "kῘllสllⴖῘʛʛeꞅṡַ")
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("" .. string.rep(" ", 100) .. "cมtสถiggสรხꞅสiถiถһสꙆf")
-    end
-})
-local ChatButton3 = ChatTab:CreateButton({
-    Name = "rape niggas",
-    Description = nil,
-    Callback = function()
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("һสveถ'tมรedtһewჿꞅd'ꞅสpe'iถสwһiꙆe...")
-        task.wait(1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("iꞅสpedꙆiꝁe6ჿꞅ7ถiggeꞅรtჿdสy")
-    end
-})
-local ChatButton4 = ChatTab:CreateButton({
-    Name = "hello niggers",
-    Description = nil,
-    Callback = function()
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("helloⴖῘʛʛeꞅṡַ")
-    end
-})
-local ChatButton5 = ChatTab:CreateButton({
-    Name = "ez nigga",
-    Description = nil,
-    Callback = function()
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ezⴖเ่ʛʛส")
-    end
-})
-local ChatButton6 = ChatTab:CreateButton({
-    Name = "shut up nigger",
-    Description = nil,
-    Callback = function()
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("ṡַḥַụַṭַụṗַⴖῘʛʛeꞅ")
-    end
-})
-local ChatButton7 = ChatTab:CreateButton({
-    Name = "im jerking",
-    Description = nil,
-    Callback = function()
-        task.wait(0.1)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("іṁjәַꞅꝁịַṅַg")
-    end
-})
---]]
 -- EmotesTab
 local EmotesTab = Window:CreateTab({
     Name = "Emotes",
@@ -420,6 +361,13 @@ local EmotesButton3 = EmotesTab:CreateButton({
     Description = nil,
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/XVCHub/scripts/main/ugc-emote-player"))()
+    end
+})
+local EmotesButton4 = EmotesTab:CreateButton({
+    Name = "bundle animations",
+    Description = nil,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/BundleAnimations.lua"))()
     end
 })
 --
@@ -589,28 +537,26 @@ elseif gag2_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xQuartyx/QuartyzScript/main/Loader.lua"))()
         end
     })
-elseif doors_id[game.PlaceId] then
+elseif unboxfactory_id[game.PlaceId] then
     local GameTab = Window:CreateTab({
-        Name = "DUURZ",
+        Name = "unbox a fucktory",
         Icon = "star",
         ImageSource = "Material",
         ShowTitle = true
     })
     local GameButton1 = GameTab:CreateButton({
-        Name = "sexation",
+        Name = "autocollect",
         Description = nil,
         Callback = function()
-            loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/730854e5b6499ee91deb1080e8e12ae3.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/factory_auto_collect.lua"))()
+        end
+    })
+    local GameButton2 = GameTab:CreateButton({
+        Name = "autobuy Frostbound totem",
+        Description = nil,
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/factory_auto_buy.lua"))()
         end
     })
 end
 --
---[[
-local Button = Tab:CreateButton({
-    Name = "Button",
-    Description = nil,
-    Callback = function()
-        return
-    end
-})
---]]
