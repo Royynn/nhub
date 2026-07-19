@@ -1,4 +1,4 @@
-scriptname = "nigger hub v2.4.6"
+scriptname = "nigger hub v2.4.7"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if Luna then Luna:Destroy() end
@@ -558,5 +558,31 @@ elseif unboxfactory_id[game.PlaceId] then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Royynn/nhub/refs/heads/main/factory_auto_buy.lua"))()
         end
     })
+    local GameButton3 = GameTab:CreateButton({
+        Name = "delete popups nigga",
+        Description = nil,
+        Callback = function()
+            LocalPlayer.PlayerGui.EggCrateOpeningUI:Destroy()
+            LocalPlayer.PlayerGui.DontLeaveUI:Destroy()
+            LocalPlayer.PlayerGui.StageBundleOffer:Destroy()
+            LocalPlayer.PlayerGui.UpdateLog:Destroy()
+        end
+    })
+    local GameButton4 = GameTab:CreateToggle({
+        Name = "admin shop",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            LocalPlayer.PlayerGui.AdminShop.Enabled = Value
+        end
+    }, "Toggle")
+    local GameButton5 = GameTab:CreateToggle({
+        Name = "admin spin",
+        Description = nil,
+        CurrentValue = false,
+        Callback = function(Value)
+            LocalPlayer.PlayerGui.AdminAbuseSpinWheel.Enabled = Value
+        end
+    }, "Toggle")
 end
 --
